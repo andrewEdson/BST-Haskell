@@ -57,7 +57,7 @@ search x (Node t left right)
 -- False
 
 -- total sum in celsius
-totalTemperature Empty = 0
+totalTemperature Empty = C 0
 totalTemperature (Node t left right) =
   toC t + totalTemperature left + totalTemperature right
 
@@ -96,3 +96,13 @@ convertTree' f tree = mapBST f tree
 -- newTree = convertTree toC tree
 -- show newTree
 -- "Node (C 37.77777777777778) (Node (C 0.0) Empty Empty) (Node (C 100.0) Empty Empty)"
+
+-- Test script for the whole application
+-- tree = foldr insert Empty [C 0, C 100, F 100]
+-- show tree
+-- search (C 0) tree
+-- search (F 32) tree
+-- search (F 67) tree
+-- totalTemperature tree
+-- convertTree toC tree
+-- convertTree toF tree
